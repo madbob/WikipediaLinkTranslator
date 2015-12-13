@@ -119,6 +119,13 @@ else if (isset($_GET['t']) && !empty($_GET['t'])) {
 		</script>
 
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
+		<meta property="og:site_name" content="Wikipedia Link Translator" />
+		<meta property="og:title" content="Wikipedia Link Translator" />
+		<meta property="og:url" content="http://wlt.madbob.org/" />
+		<meta property="og:image" content="http://wlt.madbob.org/img/logo.png" />
+		<meta property="og:type" content="website" />
+		<meta property="og:email" content="bob@linux.it" />
 	</head>
 
 	<body>
