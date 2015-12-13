@@ -163,5 +163,7 @@ else if (isset($_GET['t']) && !empty($_GET['t'])) {
 				</p>
 			</div>
 		</div>
+
+		<script type="application/javascript" src="http://vh.madbob.org/vh.js.php?project=madbob/WikipediaLinkTranslator"></script>
 	</body>
 </html>
