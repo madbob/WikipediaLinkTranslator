@@ -46,6 +46,14 @@ function getUrlInfo($url)
 		foreach($nodes as $node)
 			$info->{$node['lang']} = (string) $node['href'];
 
+		/*
+			Sometimes pages have not a self-reference in interlanguage links,
+			here we enforce it to keep consistency
+		*/
+		preg_match('/^\/\/(?<locale>[a-z\-]*)\.wikipedia\.org\/wiki\/.*$/', $url, $matches);
+		if (isset($matches['locale']))
+			$info->{$matches['locale']} = $url;
+
 		$enc_info = json_encode($info);
 
 		foreach($info as $lang => $url)
@@ -72,6 +80,9 @@ function getProperLink($url, $info)
 
 	$negotiator = new \Negotiation\LanguageNegotiator();
 	$bests = $negotiator->getBest($_SERVER['HTTP_ACCEPT_LANGUAGE'], $languages);
+	if ($bests == null)
+		return $url;
+
 	$lang = $bests->getType();
 	return $info->$lang;
 }
